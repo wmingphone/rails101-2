@@ -33,12 +33,10 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
 
     redirect_to groups_path, notice: "Update Success"
-  end
   else
     render :edit
   end
-  end
-
+end
   def destroy
     @group.destroy
   redirect_to groups_path, alert: "Group deleted"
@@ -55,4 +53,5 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:title, :description)
-  end
+end
+end
